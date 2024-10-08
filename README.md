@@ -1,18 +1,12 @@
-# COSMIC Application Template
+# Linutil Space
 
-A template for COSMIC applications.
+A GUI around [linutil](https://github.com/ChrisTitusTech/linutil), implemented with iced/libcosmic.
 
-## Getting Started
+## TODO
 
-To get started, click the "Use this template" button above. This will create a new repository in your account with the contents of this template.
+- Launch scripts; preferrably with an inbuilt terminal emulator
+- Back button (this should take like 2 secs to implement)
 
-Once you have created a new repository from this template, you can clone it to your local machine and start developing your COSMIC application.
-
-## Development
-
-When you open the repository in your code editor, you will see a lot of comments in the code. These comments are there to help you get a basic understanding of what each part of the code does.
-
-Once you feel comfortable with it, refer back to the [COSMIC documentation](https://pop-os.github.io/libcosmic/cosmic/) for more information on how to build COSMIC applications.
 
 ## Install
 

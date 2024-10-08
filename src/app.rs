@@ -7,14 +7,15 @@ use crate::tabs::Tabs;
 use cosmic::app::{Command, Core};
 use cosmic::iced::alignment::{Horizontal, Vertical};
 use cosmic::iced::{Alignment, Length};
-use cosmic::widget::{self, icon, menu, nav_bar};
+use cosmic::widget::{self, menu, nav_bar};
 use cosmic::{cosmic_theme, theme, Application, ApplicationExt, Apply, Element};
+use ego_tree::NodeId;
 
 const REPOSITORY: &str = "https://github.com/lj3954/linutil_space";
 
 /// This is the struct that represents your application.
 /// It is used to define the data that will be used by your application.
-pub struct YourApp {
+pub struct Linutil {
     /// Application state which is managed by the COSMIC runtime.
     core: Core,
     /// Display a context drawer with the designated page if defined.
@@ -32,7 +33,7 @@ pub struct YourApp {
 #[derive(Debug, Clone)]
 pub enum Message {
     None,
-    EnterDirectory(usize),
+    EnterDirectory(NodeId),
     LaunchUrl(String),
     ToggleContextPage(ContextPage),
 }
@@ -75,7 +76,7 @@ impl menu::action::MenuAction for MenuAction {
 /// - `Flags` is the data that your application needs to use before it starts.
 /// - `Message` is the enum that contains all the possible variants that your application will need to transmit messages.
 /// - `APP_ID` is the unique identifier of your application.
-impl Application for YourApp {
+impl Application for Linutil {
     type Executor = cosmic::executor::Default;
 
     type Flags = ();
@@ -110,7 +111,7 @@ impl Application for YourApp {
 
         tabs.add_list(&mut nav);
 
-        let mut app = YourApp {
+        let mut app = Linutil {
             core,
             context_page: ContextPage::default(),
             key_binds: HashMap::new(),
@@ -203,7 +204,7 @@ impl Application for YourApp {
     }
 }
 
-impl YourApp {
+impl Linutil {
     /// The about page for this app.
     pub fn about(&self) -> Element<Message> {
         let cosmic_theme::Spacing { space_xxs, .. } = theme::active().cosmic().spacing;
