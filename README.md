@@ -4,8 +4,10 @@ A GUI around [linutil](https://github.com/ChrisTitusTech/linutil), implemented w
 
 ## TODO
 
-- Launch scripts; preferrably with an inbuilt terminal emulator
 - Back button (this should take like 2 secs to implement)
+- Launch scripts; preferrably with an inbuilt terminal emulator
+- Update & cleanup dependencies & code. Consider relicensing
+- Multi selection?
 
 
 ## Install
